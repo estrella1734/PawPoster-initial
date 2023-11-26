@@ -20,7 +20,7 @@
 </style>
 
 </head>
-
+ <jsp:include page="${component}/common_imports.jsp" />
 <body>
 
 	<jsp:include page="${component}/header.jsp"></jsp:include>

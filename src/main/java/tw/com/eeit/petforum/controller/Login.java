@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import tw.com.eeit.petforum.model.bean.Member;
 import tw.com.eeit.petforum.service.MemberService;
@@ -32,6 +33,9 @@ public class Login extends HttpServlet {
 
 		// 登入成功
 		if (m != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("loggedInMember", m);
+			response.sendRedirect("index");
 		}
 
 	}
